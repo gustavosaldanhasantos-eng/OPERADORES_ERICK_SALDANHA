@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de Operadores Relacionais</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 80px;
+            text-align: center;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+ 
+        <tr>
+            <td><input type="text" id="val1_1"></td>
+            <td>==</td>
+            <td><input type="text" id="val1_2"></td>
+            <td><button onclick="executarComparacao(1, '==')">Comparar</button></td>
+        </tr>
+ 
+        <tr>
+            <td><input type="text" id="val2_1"></td>
+            <td>!=</td>
+            <td><input type="text" id="val2_2"></td>
+            <td><button onclick="executarComparacao(2, '!=')">Comparar</button></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" id="val3_1"></td>
+            <td>&gt;</td>
+            <td><input type="text" id="val3_2"></td>
+            <td><button onclick="executarComparacao(3, '>')">Comparar</button></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" id="val4_1"></td>
+            <td>&gt;=</td>
+            <td><input type="text" id="val4_2"></td>
+            <td><button onclick="executarComparacao(4, '>=')">Comparar</button></td>
+        </tr>
+       
+        <tr>
+            <td><input type="text" id="val5_1"></td>
+            <td>&lt;</td>
+            <td><input type="text" id="val5_2"></td>
+            <td><button onclick="executarComparacao(5, '<')">Comparar</button></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" id="val6_1"></td>
+            <td>&lt;=</td>
+            <td><input type="text" id="val6_2"></td>
+            <td><button onclick="executarComparacao(6, '<=')">Comparar</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function executarComparacao(linha, operador) {
+            let input1 = document.getElementById('val' + linha + '_1').value;
+            let input2 = document.getElementById('val' + linha + '_2').value;
+
+            let n1 = Number(input1);
+            let n2 = Number(input2);
+
+            if (!isNaN(n1) && !isNaN(n2) && input1.trim() !== "" && input2.trim() !== "") {
+                input1 = n1;
+                input2 = n2;
+            }
+
+            let resultado = false;
+
+            switch(operador) {
+                case '==': resultado = (input1 == input2); break;
+                case '!=': resultado = (input1 != input2); break;
+                case '>':  resultado = (input1 > input2);  break;
+                case '>=': resultado = (input1 >= input2); break;
+                case '<':  resultado = (input1 < input2);  break;
+                case '<=': resultado = (input1 <= input2); break;
+            }
+
+            if (resultado) {
+                alert("VERDADEIRO");
+            } else {
+                alert("FALSO");
+            }
+        }
+    </script>
+
+</body>
+</html>
