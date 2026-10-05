@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade de Operadores Relacionais</title>
+    <title>Operadores</title>
     <style>
         table {
             border-collapse: collapse;
             margin: 20px auto;
         }
+
         td {
             border: 1px solid #ccc;
             padding: 8px;
             text-align: center;
         }
+
         input[type="text"] {
             width: 80px;
             text-align: center;
         }
+
         button {
             cursor: pointer;
         }
     </style>
 </head>
+
 <body>
 
     <table>
- 
+
         <tr>
             <td><input type="text" id="val1_1"></td>
             <td>==</td>
             <td><input type="text" id="val1_2"></td>
             <td><button onclick="executarComparacao(1, '==')">Comparar</button></td>
         </tr>
- 
+
         <tr>
             <td><input type="text" id="val2_1"></td>
             <td>!=</td>
@@ -54,7 +59,7 @@
             <td><input type="text" id="val4_2"></td>
             <td><button onclick="executarComparacao(4, '>=')">Comparar</button></td>
         </tr>
-       
+
         <tr>
             <td><input type="text" id="val5_1"></td>
             <td>&lt;</td>
@@ -85,12 +90,12 @@
 
             let resultado = false;
 
-            switch(operador) {
+            switch (operador) {
                 case '==': resultado = (input1 == input2); break;
                 case '!=': resultado = (input1 != input2); break;
-                case '>':  resultado = (input1 > input2);  break;
+                case '>': resultado = (input1 > input2); break;
                 case '>=': resultado = (input1 >= input2); break;
-                case '<':  resultado = (input1 < input2);  break;
+                case '<': resultado = (input1 < input2); break;
                 case '<=': resultado = (input1 <= input2); break;
             }
 
@@ -103,4 +108,5 @@
     </script>
 
 </body>
+
 </html>
